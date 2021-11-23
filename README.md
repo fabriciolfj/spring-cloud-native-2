@@ -21,5 +21,5 @@
 - Garante a consistência dos dados em vários microservices
 - Existem 3 formas:
   - orquestrador (similar ao aggregate)
-  - comunicação hybrida
+  - comunicação hybrida - parte assincrono / sincrona
   - coreografia entre os microservices: abordagem orientada a eventos, processo assíncrono.
