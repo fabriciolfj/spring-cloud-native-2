@@ -16,3 +16,10 @@
 - obs: 
   - para um contexto onde existe uma base de dados compartilhada entre os serviços
   - a consulta pode representar uma junção de tabelas.
+
+##### SAGA
+- Garante a consistência dos dados em vários microservices
+- Existem 3 formas:
+  - orquestrador (similar ao aggregate)
+  - comunicação hybrida
+  - coreografia entre os microservices: abordagem orientada a eventos, processo assíncrono.
