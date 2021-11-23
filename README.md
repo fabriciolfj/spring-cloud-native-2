@@ -23,3 +23,5 @@
   - orquestrador (similar ao aggregate)
   - comunicação hybrida - parte assincrono / sincrona
   - coreografia entre os microservices: abordagem orientada a eventos, processo assíncrono.
+
+## Observabiity e monitoramento
