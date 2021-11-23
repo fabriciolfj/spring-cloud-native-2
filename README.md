@@ -13,4 +13,6 @@
 ##### CQRS
 - Um serviço tem responsabilidade apenas de salvar, atualizar e deletar informações
 - Outro serviço efetua apenas consultas
-- obs: para um contexto onde existe uma base de dados compartilhada entre os serviços
+- obs: 
+  - para um contexto onde existe uma base de dados compartilhada entre os serviços
+  - a consulta pode representar uma junção de tabelas.
