@@ -25,3 +25,14 @@
   - coreografia entre os microservices: abordagem orientada a eventos, processo assíncrono.
 
 ## Observabiity e monitoramento
+- Centralização de logs
+- Coleta de métricas (utilizando micrometer do spring com prometheus)
+- Rastreamento com spring sleuth, integrando com jaeger
+
+## Gateway
+- Funciona com um proxy reverso, ou seja, recebe as requisições e encaminha para o serviço correspondente, diante uma tabela de rotas.
+- Ideal para centralizar a segurança da aplicação, uma vez que o mesmo é a porta de entrada
+- Trabalhar com cache, ou seja, caso a resposta seja igual a uma segunda chamada, pode-se retornar os dados em cache em vez de bater no serviço responsável.
+- Inserir cotas de requisição por client
+- Limitar o número de requisições
+- Efetuar loadbalance
