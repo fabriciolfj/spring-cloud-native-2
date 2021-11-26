@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: spring-gateway-demo
+  redis:
+    host: localhost
+    port: 6379
+  cloud:
+    gateway:
+      default-filters:
+        - TokenRelay
+      routes:
+        - id: catalogues_route
+          uri: http://localhost:8010
+          predicates:
+            - Path=/api/v1/catalogue/**
+            - Weight=group1, 6
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 2 #quantidade de requisições por client por segundo
+                redis-rate-limiter.burstCapacity: 4 # quantidade maxima de requisições que um cliente pode fazer em um único segundo
+        - id: customers_route
+          uri: http://localhost:8011
+          predicates:
+            - Path=/api/v1/customers/**
+          filters:
+            - RemoveRequestHeader=Cookie
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            tokenUri: http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+            authorizationUri: http://localhost:8080/auth/realms/master/protocol/openid-connect/auth
+            userInfoUri: http://localhost:8080/auth/realms/master/protocol/openid-connect/userinfo
+            userNameAttribute: preferred_username
+        registration:
+          keycloak-with-test-scope:
+            provider: keycloak
+            clientId: user-with-test-scope
+            clientSecret: 900a6b83-013c-464b-980f-060268b4891b
+            authorizationGrantType: authorization_code
+            redirectUri: "{baseUrl}/login/oauth2/code/keycloak"
+          keycloak-without-test-scope:
+            provider: keycloak
+            clientId: user-without-test-scope
+            clientSecret: ea6701ca-81c8-41dd-b909-4a50fc663ecc
+            authorizationGrantType: authorization_code
+            redirectUri: "{ baseUrl }/login/oauth2/code/keycloak"
+
+server:
+  port: 9020

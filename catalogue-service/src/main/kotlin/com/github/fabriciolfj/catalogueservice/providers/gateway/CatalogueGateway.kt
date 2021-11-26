@@ -19,6 +19,10 @@ class CatalogueGateway {
         repository.save(CatalogueEntity().toEntity(catalogue))
     }
 
+    fun delete(id: Long) {
+        repository.deleteById(id)
+    }
+
     fun findById(id: Long) : Catalogue {
         return repository.findById(id)
             .map { it.toDomain() }
