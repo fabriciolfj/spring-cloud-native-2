@@ -43,6 +43,6 @@
   - feature: arquivo que contens os cenários e passos para executação do teste (escrito em linhguagem Gherkin)
   - cenário: situação ou o que será testado, uma feature pode conter mais de um cenário
   - passos: etapas da execução, um cenário pode conter mais mais de uma step(passos)
-    - dado: pre condição
-    - quando: testando a condição
+    - dado: pre condição, exemplo: configuração de dados iniciais
+    - quando: testando a condição, a ação que o usuário realiza
     - então: validando resultado  
