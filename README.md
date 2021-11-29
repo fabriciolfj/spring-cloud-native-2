@@ -36,3 +36,13 @@
 - Inserir cotas de requisição por client
 - Limitar o número de requisições
 - Efetuar loadbalance
+
+## BDD (behavior driven development)
+- Abordagem para efetuar/elaborar testes orientados ao comportamento do software
+- Possui os seguintes componentes:
+  - feature: arquivo que contens os cenários e passos para executação do teste (escrito em linhguagem Gherkin)
+  - cenário: situação ou o que será testado, uma feature pode conter mais de um cenário
+  - passos: etapas da execução, um cenário pode conter mais mais de uma step(passos)
+    - dado: pre condição
+    - quando: testando a condição
+    - então: validando resultado  
