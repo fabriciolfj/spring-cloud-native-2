@@ -1,0 +1,11 @@
+{
+  "describe": "compra console",
+  "value": 3900.99,
+  "uuid": "889-9989-87454-89",
+  "payments" : [
+    {
+      "type" : "cardVisa",
+      "value" : 3900.99
+    }
+  ]
+}

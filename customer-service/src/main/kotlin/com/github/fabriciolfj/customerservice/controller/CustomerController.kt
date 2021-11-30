@@ -16,7 +16,7 @@ class CustomerController {
     private lateinit var repository: CustomerRepository
 
     @GetMapping
-    @PreAuthorize("hasAuthority('SCOPE_TESTE')")
+    //@PreAuthorize("hasAuthority('SCOPE_TESTE')")
     fun findAll() : List<Customer> {
         return repository.findAll()
     }

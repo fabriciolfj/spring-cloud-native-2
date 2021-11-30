@@ -1,0 +1,1 @@
+mvn test -Dcucumber.filter.tags="@componente and not @ignore"`
