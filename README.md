@@ -46,3 +46,5 @@
     - dado: pre condição, exemplo: configuração de dados iniciais
     - quando: testando a condição, a ação que o usuário realiza
     - então: validando resultado  
+
+## Kubernetes
