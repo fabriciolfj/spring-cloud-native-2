@@ -1,8 +1,17 @@
 
 spring:
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
   application:
     name: catalogue-service
   jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
       ddl-auto: update
   cache:
@@ -29,3 +38,17 @@ springdoc:
     path: /docs
   swagger-ui:
     path: /swagger
+
+logging:
+  charset:
+    file:
+      name: /home/spark/Documentos/repositorios/spring-cloud-native-2/log/catalog.log
+  level:
+    org.springframework: ERROR
+    com.github.fabriciolfj.catalogueservice: INFO
+
+wavefront.application.name: spring-catalogue
+wavefront.application.service: spring-catalogue
+
+management.metrics.export.wavefront.api-token: 202a4a25-8b1b-432b-968e-bb05ec9a9d90
+management.metrics.export.wavefront.uri: https://wavefront.surf
