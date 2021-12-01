@@ -48,3 +48,5 @@
     - então: validando resultado  
 
 ## Kubernetes
+#### Instalar octant
+- https://github.com/vmware-tanzu/octant
